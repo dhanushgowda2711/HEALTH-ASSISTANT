@@ -1,0 +1,175 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #ffffff;
+}
+
+/* Splash screen styles */
+.splash-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    animation: fadeOut 2s 3s forwards;
+}
+.logo-container {
+    text-align: center;
+    color: #4caf50;
+    animation: fadeIn 2s 2s forwards;
+}
+.logo-animation {
+    width: 150px;
+    animation: zoomIn 2s;
+}
+.title-animation {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #4caf50;
+    animation: fadeIn 2s 2s forwards;
+}
+
+/* Hidden content */
+.hidden {
+    display: none;
+}
+
+/* Welcome Page */
+#welcome-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 1.5rem;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.button-container button {
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+form label {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.form-input, select {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus, select:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.8);
+}
+
+/* Location button style */
+#get-location-button {
+    background-color: #2c2c2c;
+    color: #4caf50;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#get-location-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Button styles for forms */
+.btn-submit {
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Button in health section */
+.health a button {
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.health a button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.5); }
+    100% { transform: scale(1); }
+}

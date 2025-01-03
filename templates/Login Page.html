@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring System: Login or Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="logo-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKHt8JCImYFx8dKm_lchlpgCg7lEnkoJjFkQ&s" alt="Logo" id="logo" class="logo-animation">
+            <h1 class="title-animation">ECE Department</h1>
+            <h2 class="title-animation">Health Monitoring System</h2>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="hidden">
+        <!-- Welcome Page -->
+        <div id="welcome-page" class="welcome-page">
+            <h1>Welcome to the Health Monitoring System</h1>
+            <div class="button-container">
+                <button id="sign-up-button" class="btn-main">Sign Up</button>
+                <button id="sign-in-button" class="btn-main">Log In</button>
+            </div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div id="sign-up-form" class="form hidden">
+            <h2>Sign Up</h2>
+            <form id="signup-form" action="/signup" method="POST">
+                <label for="signup-photo">Upload Photo:</label>
+                <input type="file" id="signup-photo" accept="image/*" required>
+
+                <label for="signup-name">Name:</label>
+                <input type="text" id="signup-name" required>
+
+                <label for="signup-address">Address:</label>
+                <textarea id="signup-address" required></textarea>
+
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" required>
+
+                <label for="signup-location">Location:</label>
+                <input type="text" id="signup-location" placeholder="Click to get location" readonly>
+                <button type="button" id="get-location-button" onclick="getUserLocation()">Get Location</button>
+
+                <label for="signup-severity">Severity:</label>
+                <select id="signup-severity">
+                    <option value="Severe">Severe</option>
+                    <option value="Normal">Normal</option>
+                </select>
+
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" required>
+
+                <button type="submit" class="btn-submit">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Sign In Form -->
+        <div id="sign-in-form" class="form hidden">
+            <h2>Sign In</h2>
+         <form id="signin-form" method="POST" action="/login">
+    <label for="signin-username">Username:</label>
+    <input type="text" id="signin-username" name="signin-username" required>
+    
+    <label for="signin-password">Password:</label>
+    <input type="password" id="signin-password" name="signin-password" required>
+    
+    <button type="submit" class="btn-submit">Log In</button>
+</form>
+        </div>
+
+        <!-- Export Button -->
+        <div class="export-container">
+            <button id="export-to-excel" class="btn-main">Export to Excel</button>
+        </div>
+    </div>
+
+    <script>
+        function getUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        document.getElementById('signup-location').value = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                    },
+                    (error) => {
+                        alert('Error fetching location: ' + error.message);
+                    }
+                );
+            } else {
+                alert('Geolocation is not supported by this browser.');
+            }
+        }
+    </script>
+</body>
+</html>
+

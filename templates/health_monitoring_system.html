@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring System</title>
+    <link rel="stylesheet" href="/static/stylesdet.css">
+    <script src="/static/scriptdetails.js" defer></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  emailjs.init('AA4oMm2fmLzeYJQI9'); // Use your actual user ID
+</script>
+
+
+
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKHt8JCImYFx8dKm_lchlpgCg7lEnkoJjFkQ&s" alt="Logo" id="logo" class="logo-animation">
+        <h1 class="title-animation">Health Assistant</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="hidden">
+        <header class="header-main">
+            <h1>Health Assistant</h1>
+        </header>
+        <nav class="tabs">
+            <button id="tab1" class="tab-button active">Patient Dashboard</button>
+            <button id="tab2" class="tab-button">Health Statistics</button>
+            <button id="tab3" class="tab-button">Graphs</button> <!-- New Graph Tab -->
+        </nav>
+        <main>
+            <!-- Patient Dashboard Section -->
+            <section id="dashboard" class="tab-content active">
+                <h2>Patient Information</h2>
+                <div class="info">
+                    <img id="patient-photo" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Patient Photo">
+                    <div>
+                        <p><strong>Name:</strong> <span id="patient-name">John Doe</span></p>
+                        <p><strong>Gender:</strong> <span id="patient-gender">Male</span></p>
+                        <p><strong>Disease:</strong> <span id="patient-disease">Diabetes</span></p>
+                        <p><strong>Diet:</strong> <span id="patient-diet">Low Sugar Diet</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Health Statistics Section -->
+            <section id="statistics" class="tab-content">
+                <h2>Health Parameters</h2>
+                <table>
+                    <tr><th>Parameter</th><th>Value</th></tr>
+                    <tr><td>Heart Rate</td><td id="heart-rate">-- bpm</td></tr>
+                    <tr><td>Humidity</td><td id="humidity">-- %</td></tr>
+                    <tr><td>Temperature</td><td id="temperature">-- °C</td></tr>
+                    <tr><td>Body Temperature</td><td id="bodytemperature">-- °C</td></tr> <!-- Added Body Temperature -->
+                </table>
+                <h2>Activity Results</h2>
+                <p><strong>ECG:</strong> <span id="ecg-result">--</span></p> <!-- Added ECG data placeholder -->
+            </section>
+
+            <!-- Graphs Section (New) -->
+            <section id="graphs" class="tab-content">
+                <h2>Health Parameter Graphs</h2>
+
+                <!-- Canvas for Chart.js -->
+                <canvas id="healthChart" width="600" height="200"></canvas> <!-- Main health chart -->
+
+                <h2>ECG Graph</h2>
+                <canvas id="ecgChart" width="600" height="200"></canvas> <!-- Separate ECG chart -->
+
+                <br>
+
+                <!-- Button to Download Patient Data (as PDF) -->
+                <button id="downloadBtn">Download Patient Data</button>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Health Monitoring System</p>
+        </footer>
+    </div>
+</body>
+</html>
+
