@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Fetch the latest data from the Flask server
-    const FLASK_API_URL = 'http://192.168.29.16:5000/esp32-data';  // Change this to your Flask API endpoint
+    const FLASK_API_URL = 'https://health-assistant-1epb.onrender.com/esp32-data';  // Change this to your Flask API endpoint
 
     let temperature = '--';
     let humidity = '--';
