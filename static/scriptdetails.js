@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ecg: ecg
         };
 
-        emailjs.send('service_3fgtmrj', 'template_5rs54lh')
+        emailjs.send('service_3fgtmrj', 'template_5rs54lh',emailData)
             .then((response) => {
                 console.log('Email sent successfully:', response);
             }, (error) => {
