@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
         function sendEmail() {
-        const emailData = {
+        var templateParams = {
             patient_name: 'John Doe',
             patient_age: '45',
             patient_gender: 'Male',
@@ -138,12 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
             body_temperature: bodyTemperature,
             ecg: ecg
         };
+        console.log(templateParams)
 
-        emailjs.send('service_3fgtmrj', 'template_5rs54lh',emailData)
-            .then((response) => {
-                console.log('Email sent successfully:', response);
-            }, (error) => {
-                console.error('Error sending email:', error);
+        emailjs.send("service_3fgtmrj", "template_5rs54lh",templateParams)
+            .then(function(response) => {
+                console.log('Email sent successfully:', response.status, response.text);
+            }, function(error) => {
+                console.log('Error sending email:', error);
+                alert('message failed to send.');
             });
     }
 
