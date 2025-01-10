@@ -39,7 +39,7 @@ def home():
     return render_template("Login Page.html")  # Serve the login page
 
 # Route for health monitoring system (after successful login)
-@app.route("/health_monitoring_system.html")
+@app.route("/health_monitoring_system")
 def health_monitoring():
     return render_template("health_monitoring_system.html")
 
