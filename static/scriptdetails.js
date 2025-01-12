@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(FLASK_API_URL)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    throw new Error(HTTP error! Status: ${response.status});
                 }
                 return response.json();
             })
@@ -54,15 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 ecg = data.ecg || '--';
 
                 // Update HTML elements
-                document.getElementById('temperature').textContent = `${temperature} °C`;
-                document.getElementById('humidity').textContent = `${humidity} %`;
-                document.getElementById('heart-rate').textContent = `${pulse} bpm`;
-                document.getElementById('bodytemperature').textContent = `${bodyTemperature} °C`;
-                document.getElementById('ecg-result').textContent = `${ecg}`;
+                document.getElementById('temperature').textContent = ${temperature} °C;
+                document.getElementById('humidity').textContent = ${humidity} %;
+                document.getElementById('heart-rate').textContent = ${pulse} bpm;
+                document.getElementById('bodytemperature').textContent = ${bodyTemperature} °C;
+                document.getElementById('ecg-result').textContent = ${ecg};
 
                 // Update chart data
                 const time = new Date().toLocaleTimeString();
-                if (timeLabels.length >= 288) {
+                if (timeLabels.length >= 5) {
                     timeLabels.shift();
                     temperatureData.shift();
                     humidityData.shift();
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error fetching sensor data:', error));
     }
 
-    setInterval(fetchSensorData, 300000); // Fetch every 5 minutes
+    setInterval(fetchSensorData, 3000); // Fetch every 3 seconds
     fetchSensorData(); // Initial fetch
 
     // Initialize Charts
@@ -237,4 +237,5 @@ document.addEventListener('DOMContentLoaded', () => {
         doc.save('patient-report.pdf');
     });
 });
+
 
