@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Update chart data
                 const time = new Date().toLocaleTimeString();
-                if (timeLabels.length >= 5) {
+                if (timeLabels.length >= 288) {
                     timeLabels.shift();
                     temperatureData.shift();
                     humidityData.shift();
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error fetching sensor data:', error));
     }
 
-    setInterval(fetchSensorData, 3000); // Fetch every 3 seconds
+    setInterval(fetchSensorData, 300000); // Fetch every 3 seconds
     fetchSensorData(); // Initial fetch
 
     // Initialize Charts
