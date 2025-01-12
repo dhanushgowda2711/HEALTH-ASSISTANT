@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Update chart data
                 const time = new Date().toLocaleTimeString();
-                if (timeLabels.length >= 5) {
+                if (timeLabels.length >= 288) {
                     timeLabels.shift();
                     temperatureData.shift();
                     humidityData.shift();
