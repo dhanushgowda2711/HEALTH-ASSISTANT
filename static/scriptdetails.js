@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error fetching sensor data:', error));
     }
 
-    setInterval(fetchSensorData, 3000); // Fetch every 3 seconds
+    setInterval(fetchSensorData, 300000); // Fetch every 5 minutes
     fetchSensorData(); // Initial fetch
 
     // Initialize Charts
