@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function sendEmail() {
         const emailData = {
-            patient_name: 'John Doe',
-            patient_age: '45',
+            patient_name: 'Dhanush',
+            patient_age: '21',
             patient_gender: 'Male',
             temperature: temperature,
             pulse: pulse,
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ecg: ecg
         };
 
-        emailjs.send('service_3fgtmrj', 'template_5rs54lh')
+        emailjs.send('service_3fgtmrj', 'template_5rs54lh',emailData)
             .then((response) => {
                 console.log('Email sent successfully:', response);
             }, (error) => {
