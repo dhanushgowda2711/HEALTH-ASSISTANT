@@ -3,7 +3,7 @@ from flask import Response
 from flask.templating import render_template
 from pydantic import BaseModel
 
-app = Flask(__name__)
+app = Flask(__name__) #test
 
 # Global variable to store sensor data (can be expanded if needed)
 esp32_data = {
